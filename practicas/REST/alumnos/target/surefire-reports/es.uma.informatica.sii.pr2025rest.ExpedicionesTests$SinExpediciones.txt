@@ -1,0 +1,9 @@
+-------------------------------------------------------------------------------
+Test set: es.uma.informatica.sii.pr2025rest.ExpedicionesTests$SinExpediciones
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 11.461 s - in es.uma.informatica.sii.pr2025rest.ExpedicionesTests$SinExpediciones
+es.uma.informatica.sii.pr2025rest.ExpedicionesTests$SinExpediciones.obtenerTodas  Time elapsed: 2.033 s
+es.uma.informatica.sii.pr2025rest.ExpedicionesTests$SinExpediciones.obtenerPorIdNoExiste  Time elapsed: 2.037 s
+es.uma.informatica.sii.pr2025rest.ExpedicionesTests$SinExpediciones.crearExpedicion  Time elapsed: 2.037 s
+es.uma.informatica.sii.pr2025rest.ExpedicionesTests$SinExpediciones.eliminarExpedicion  Time elapsed: 2.027 s
+es.uma.informatica.sii.pr2025rest.ExpedicionesTests$SinExpediciones.actualizarExpedicion_NoExiste  Time elapsed: 2.033 s

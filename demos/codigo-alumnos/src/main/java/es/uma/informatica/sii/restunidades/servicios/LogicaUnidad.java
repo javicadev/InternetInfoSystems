@@ -1,5 +1,8 @@
 package es.uma.informatica.sii.restunidades.servicios;
 
+
+import es.uma.informatica.sii.restunidades.controladores.Mapper;
+import es.uma.informatica.sii.restunidades.dtos.UnidadDTO;
 import es.uma.informatica.sii.restunidades.entidades.UnidadDocente;
 import es.uma.informatica.sii.restunidades.excepciones.UnidadExistenteException;
 import es.uma.informatica.sii.restunidades.excepciones.UnidadNoEncontrada;
@@ -10,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 @Transactional
@@ -25,7 +29,15 @@ public class LogicaUnidad {
 	public List<UnidadDocente> getTodasUnidades() {
 		return repo.findAll();
 	}
-	
-	// TODO
-	
+
+    //Para convertir cada UnidadDocente a DTO
+    public List<UnidadDTO> obtenerUnidades (){
+		List<UnidadDocente> entidades = getTodasUnidades();
+		return entidades.stream()
+				.map(Mapper::toUnidadDTO)
+				.collect(Collectors.toList());
+    }
+
+
+
 }

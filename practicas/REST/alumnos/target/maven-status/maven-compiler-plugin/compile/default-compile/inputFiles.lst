@@ -1,0 +1,15 @@
+/Users/javier/Documents/InternetInfoSystems/practicas/REST/alumnos/src/main/java/es/uma/informatica/sii/pr2025rest/ExpedicionesApplication.java
+/Users/javier/Documents/InternetInfoSystems/practicas/REST/alumnos/src/main/java/es/uma/informatica/sii/pr2025rest/controladores/EquipoController.java
+/Users/javier/Documents/InternetInfoSystems/practicas/REST/alumnos/src/main/java/es/uma/informatica/sii/pr2025rest/controladores/ExpedicionController.java
+/Users/javier/Documents/InternetInfoSystems/practicas/REST/alumnos/src/main/java/es/uma/informatica/sii/pr2025rest/controladores/Mapper.java
+/Users/javier/Documents/InternetInfoSystems/practicas/REST/alumnos/src/main/java/es/uma/informatica/sii/pr2025rest/dtos/EquipoDTO.java
+/Users/javier/Documents/InternetInfoSystems/practicas/REST/alumnos/src/main/java/es/uma/informatica/sii/pr2025rest/dtos/ExpedicionDTO.java
+/Users/javier/Documents/InternetInfoSystems/practicas/REST/alumnos/src/main/java/es/uma/informatica/sii/pr2025rest/dtos/ExpedicionEntradaDTO.java
+/Users/javier/Documents/InternetInfoSystems/practicas/REST/alumnos/src/main/java/es/uma/informatica/sii/pr2025rest/entidades/Equipo.java
+/Users/javier/Documents/InternetInfoSystems/practicas/REST/alumnos/src/main/java/es/uma/informatica/sii/pr2025rest/entidades/Expedicion.java
+/Users/javier/Documents/InternetInfoSystems/practicas/REST/alumnos/src/main/java/es/uma/informatica/sii/pr2025rest/excepciones/EntidadNoExisteException.java
+/Users/javier/Documents/InternetInfoSystems/practicas/REST/alumnos/src/main/java/es/uma/informatica/sii/pr2025rest/excepciones/ExpedicionConEquiposException.java
+/Users/javier/Documents/InternetInfoSystems/practicas/REST/alumnos/src/main/java/es/uma/informatica/sii/pr2025rest/repositorios/EquipoRepository.java
+/Users/javier/Documents/InternetInfoSystems/practicas/REST/alumnos/src/main/java/es/uma/informatica/sii/pr2025rest/repositorios/ExpedicionRepository.java
+/Users/javier/Documents/InternetInfoSystems/practicas/REST/alumnos/src/main/java/es/uma/informatica/sii/pr2025rest/servicios/EquipoService.java
+/Users/javier/Documents/InternetInfoSystems/practicas/REST/alumnos/src/main/java/es/uma/informatica/sii/pr2025rest/servicios/ExpedicionService.java

@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: es.uma.informatica.sii.pr2025rest.EquipoTests$SinEquipos
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.468 s - in es.uma.informatica.sii.pr2025rest.EquipoTests$SinEquipos
+es.uma.informatica.sii.pr2025rest.EquipoTests$SinEquipos.obtenerPorIdNoExiste  Time elapsed: 2.039 s
+es.uma.informatica.sii.pr2025rest.EquipoTests$SinEquipos.actualizarEquipoNoExiste  Time elapsed: 2.036 s
+es.uma.informatica.sii.pr2025rest.EquipoTests$SinEquipos.crearEquipo  Time elapsed: 2.042 s
+es.uma.informatica.sii.pr2025rest.EquipoTests$SinEquipos.todoEquipos  Time elapsed: 2.033 s
