@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ControladorRest.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">practica2</a> &gt; <a href="index.source.html" class="el_package">es.uma.informatica.sii.practica2.controladores</a> &gt; <span class="el_source">ControladorRest.java</span></div><h1>ControladorRest.java</h1><pre class="source lang-java linenums">package es.uma.informatica.sii.practica2.controladores;
+
+import java.net.URI;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.util.UriComponentsBuilder;
+
+import es.uma.informatica.sii.practica2.entidades.Contacto;
+import es.uma.informatica.sii.practica2.servicios.LogicaContactos;
+import es.uma.informatica.sii.practica2.servicios.excepciones.ContactoNoEncontrado;
+
+@RestController
+@RequestMapping(&quot;/api/agenda/contactos&quot;)
+public class ControladorRest {
+	private LogicaContactos servicio;
+
+<span class="fc" id="L27">	public ControladorRest(LogicaContactos servicioContactos) {</span>
+<span class="fc" id="L28">		servicio = servicioContactos;</span>
+<span class="fc" id="L29">	}</span>
+
+	@GetMapping
+	public ResponseEntity&lt;List&lt;Contacto&gt;&gt; listaDeContactos() {
+<span class="fc" id="L33">		return ResponseEntity.ok(servicio.getTodosContactos());</span>
+	}
+
+	@PostMapping
+	public ResponseEntity&lt;?&gt; aniadirContacto(@RequestBody Contacto contacto, UriComponentsBuilder builder) {
+<span class="fc" id="L38">		contacto = servicio.aniadirContacto(contacto);</span>
+<span class="fc" id="L39">		URI uri = builder</span>
+<span class="fc" id="L40">				.path(&quot;/api&quot;)</span>
+<span class="fc" id="L41">				.path(&quot;/agenda&quot;)</span>
+<span class="fc" id="L42">				.path(&quot;/contactos&quot;)</span>
+<span class="fc" id="L43">				.path(String.format(&quot;/%d&quot;,contacto.getId()))</span>
+<span class="fc" id="L44">				.build()</span>
+<span class="fc" id="L45">				.toUri();</span>
+<span class="fc" id="L46">		return ResponseEntity.created(uri).build();</span>
+	}
+
+	@GetMapping(&quot;{id}&quot;)
+	public ResponseEntity&lt;Contacto&gt; getContacto(@PathVariable Long id) {
+<span class="fc" id="L51">		return ResponseEntity.of(servicio.getContactoPorId(id));</span>
+	}
+
+	@PutMapping(&quot;{id}&quot;)
+	public ResponseEntity&lt;?&gt; modificarContacto(@PathVariable Long id, @RequestBody Contacto contacto) {
+<span class="fc" id="L56">		contacto.setId(id);</span>
+		try {
+<span class="fc" id="L58">			servicio.modificarContacto(contacto);</span>
+<span class="fc" id="L59">			return ResponseEntity.ok().build();</span>
+<span class="fc" id="L60">		} catch (ContactoNoEncontrado e) {</span>
+<span class="fc" id="L61">			return ResponseEntity.notFound().build();</span>
+		}
+	}
+
+	@DeleteMapping(&quot;{id}&quot;)
+	public ResponseEntity&lt;?&gt; eliminarContacto(@PathVariable Long id) {
+		try {
+<span class="fc" id="L68">			servicio.eliminarContacto(id);</span>
+<span class="fc" id="L69">			return ResponseEntity.ok().build();</span>
+<span class="fc" id="L70">		} catch (ContactoNoEncontrado e) {</span>
+<span class="fc" id="L71">			return ResponseEntity.notFound().build();</span>
+		}
+	}
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

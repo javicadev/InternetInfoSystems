@@ -1,0 +1,6 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+practica2,es.uma.informatica.sii.practica2,Practica2Application,5,3,0,0,2,1,1,1,1,1
+practica2,es.uma.informatica.sii.practica2.entidades,Contacto,34,68,6,0,9,24,5,13,2,13
+practica2,es.uma.informatica.sii.practica2.servicios.excepciones,ContactoNoEncontrado,0,3,0,0,0,1,0,1,0,1
+practica2,es.uma.informatica.sii.practica2.controladores,ControladorRest,0,71,0,0,0,23,0,6,0,6
+practica2,es.uma.informatica.sii.practica2.servicios,LogicaContactos,0,56,0,4,0,15,0,8,0,6
