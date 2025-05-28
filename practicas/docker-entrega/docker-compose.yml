@@ -1,0 +1,37 @@
+services:
+  mysql:
+    image: mysql:8.4.0
+    container_name: mysql
+    environment:
+      MYSQL_DATABASE: cldb
+      MYSQL_USER: cliente
+      MYSQL_PASSWORD: clpd
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - ./datos:/var/lib/mysql
+    ports:
+      - "3306:3306"
+
+  backend:
+    image: eclipse-temurin:21-jre-alpine
+    container_name: backend
+    working_dir: /app
+    volumes:
+      - ./backend:/app
+    command: >
+      sh -c "
+        echo 'Esperando a MySQL...' &&
+        until nc -z mysql 3306; do
+          sleep 1;
+        done &&
+        echo 'MySQL listo, arrancando backend' &&
+        java -jar clientes-1.0.0-SNAPSHOT.jar
+      "
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysql
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/cldb
+      SPRING_DATASOURCE_USERNAME: cliente
+      SPRING_DATASOURCE_PASSWORD: clpd
